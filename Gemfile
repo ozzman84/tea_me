@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -33,12 +35,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'
   gem 'simplecov'
   # gem 'simplecov-shield'
-  gem 'simplecov-small-badge', :require => false
-  gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner'
-  gem 'rubocop'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rubocop'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov-small-badge', require: false
 end
 
 group :development do
@@ -47,6 +49,5 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

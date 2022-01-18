@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Subscription, type: :model do
@@ -14,13 +16,13 @@ RSpec.describe Subscription, type: :model do
 
   describe 'enums' do
     it 'return enums values' do
-      result = {"active"=>0, "cancelled"=>1}
+      result = { 'active' => 0, 'cancelled' => 1 }
 
       expect(Subscription.statuses).to eq(result)
     end
 
     it 'returns frequency enum values' do
-      result = { "weekly"=>0, 'monthly'=>1, 'annually'=>2 }
+      result = { 'weekly' => 0, 'monthly' => 1, 'annually' => 2 }
 
       expect(Subscription.frequencies).to eq(result)
     end
