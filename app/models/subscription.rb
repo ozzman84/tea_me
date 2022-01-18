@@ -5,6 +5,6 @@ class Subscription < ApplicationRecord
   enum status: %w[active cancelled]
   enum frequency: %w[weekly monthly annually]
 
-  validates_presence_of :title, :price, :status, :frequency
-  validates_numericality_of :price
+  validates :title, :price, :status, :frequency, presence: true
+  validates :price, precence: true, numericality: { greater_than: 0 }
 end
